@@ -1,0 +1,44 @@
+html, body{ height:100%; margin:0; }
+footer{ height:50px; margin-bottom: 50px;}
+
+/* Trick */
+body{ 
+  display:flex; 
+  flex-direction:column; 
+}
+
+footer{
+  margin-top:auto; 
+}
+
+.navbar-brand{  
+	font-size: 2.5rem !important;
+	color:#ffffff !important;
+}
+.navbar-nav > li >a{
+	font-size:1.25rem !important;
+	color:#ffffff !important
+}
+.grad{
+  background-image: linear-gradient(to right, #00c6ff , #0072ff);
+}
+
+.sub-header{
+	text-align:center;
+	padding:10px;
+}
+
+.custom-title{
+	text-align:center;
+	margin:50px;
+	padding:20px;
+	font-size: 1.5rem;
+	/*border-radius: 1em;*/
+	border: solid 1px #cccccc;
+	border-radius: 15px 15px 15px 15px;
+	box-shadow: 5px 5px 5px #cccccc;
+}
+
+tspan{
+	display:none !important;
+}

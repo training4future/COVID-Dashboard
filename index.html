@@ -7,12 +7,100 @@
 
   <link rel="stylesheet" href="css/styles.css?v=1.0">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://use.fontawesome.com/4caf74be5b.js"></script>
+  <script src="js/mapdata.js"></script>
+  <script src="js/usmap.js"></script>
 </head>
 
 <body>
-<nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
+<nav class="navbar navbar-dark navbar-expand-lg navbar-light bg-light grad">
+  <a class="navbar-brand" href="#">PREDICT <b>AI</b></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#">About the Model</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">See the Data</a>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="#">Meet the Team</a>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="#">Contact Us</a>
+      </li>
+    </ul>
+  </div>
 </nav>
+
+<div class="container-fluid">
+<h2 class="sub-header">Predicting the Future of COVID-19</h2>
+
+<div class="alert alert-warning alert-dismissible" role="alert" style="opacity:0";>
+  <span type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></span>
+  <strong>Warning!</strong> We don't have enough data for this region.
+</div>
+	<div class="row">
+		<div class="col-sm custom-title">
+		The Last 7 Days
+		</div>
+	    <div class="col-sm custom-title">
+		<i class="fa fa-bars float-left align-middle" aria-hidden="true" style="margin-top:8px;"></i>
+		United States of America
+		<i class="fa fa-search float-right align-middle" aria-hidden="true" style="margin-top:8px;"></i>
+		</div>
+		<div class="col-sm custom-title">
+		The Next 3 Weeks
+		</div>
+	</div> 
+  <div class="row">
+    <div class="col-sm">
+	<table class="table table_l_s_d">
+	  <thead>
+		<tr>
+		  <th scope="col" data-field="date">Date</th>
+		  <th scope="col" data-field="confirmed">Confirmed</th>
+		  <th scope="col" data-field="active">Active</th>
+		  <th scope="col" data-field="deaths">Deaths</th>
+		</tr>
+	  </thead>
+	  <tbody class="historic_left">
+	  </tbody>
+	</table>
+	</div>
+	    <div id="map" class="col-sm">
+	</div>
+	    <div class="col-sm">
+		<table class="table table_t_n_t_w">
+	  <thead>
+		<tr>
+		  <th scope="col" data-field="date">Date</th>
+		  <th scope="col" data-field="confirmed">Confirmed</th>
+		  <th scope="col" data-field="deaths">Deaths</th>
+		</tr>
+	  </thead>
+	  <tbody class="historic_right">
+	  </tbody>
+	</table
+	</div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="page-footer pt-4">
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">Last Updated:
+    <a class="update_date"></a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
   <script src="js/scripts.js"></script>
 </body>
 </html>
