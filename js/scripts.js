@@ -36,7 +36,15 @@ $(document).ready(function () {
 		simplemaps_usmap.state_zoom(id);
 		current_state['id'] = id;
 		current_state['name'] = simplemaps_usmap_mapinfo.names[id];
-		update_info(current_state['id'], current_state['name']);
+
+		// Fetch only if another state's data is not being fetched
+		if (FETCHING_STATUS) {
+			return false
+		} else {
+			FETCHING_STATUS = true
+			clearPlots()
+			update_info(current_state['id'], current_state['name']);
+		}
 	});
 
 	simplemaps_usmap.hooks.back = function () {
