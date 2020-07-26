@@ -24,12 +24,22 @@
 	<script defer src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 	<script defer src='js/drawCharts.js'></script>
 
-	<script src="js-predict/mapdata-predict.js"></script>
-	<script src="js-predict/usmap-predict.js"></script>
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://use.fontawesome.com/4caf74be5b.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+ <link rel="stylesheet" href="libs/chosen/chosen.css">
+<script type='text/javascript' src='libs/chosen/chosen.jquery.min.js'></script>
+
+
+  <!--<script src="js-predict/mapdata-predict.js"></script>
+  <script src="js-predict/usmap-predict.js"></script>-->
 
 	<script src="js/mapdata.js"></script>
 	<script src="js/usmap.js"></script>
-
 
 </head>
 
@@ -78,16 +88,18 @@
 					The Last 7 Days
 				</div>
 				<div class="col-sm custom-title">
-					<i class="fa fa-bars float-left align-middle" aria-hidden="true" style="margin-top:8px;"></i>
-					United States of America
-					<i class="fa fa-search float-right align-middle" aria-hidden="true" style="margin-top:8px;"></i>
-				</div>
+	<i class="fa fa-bars float-left align-middle" aria-hidden="true" style="margin-top:8px;"></i>
+	<!--<input class="search" type="text" placeholder="United States of America" name="search" onkeyup="search()">-->
+	<select data-placeholder="Choose a State..." id="state_list" style="width:60%;" tabindex="1">
+	<option value=""></option>
+	</select>		
+	<!--<i class="fa fa-search float-right align-middle search-icon pointer" aria-hidden="true" style="margin-top:8px;"></i>-->
+	</div>
 				<div class="col-sm custom-title">
 					The Next 3 Weeks
 				</div>
 			</div>
 			<div class="row">
-
 				<div class="col-sm">
 					<table class="table table_l_s_d">
 						<thead>
