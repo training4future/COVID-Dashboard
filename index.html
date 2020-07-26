@@ -1,187 +1,201 @@
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <title>Build with AI</title>
-  <meta name="description" content="Build with AI">
-  <meta name="author" content="Build with AI">
+	<meta charset="utf-8">
+	<title>Build with AI</title>
+	<meta name="description" content="Build with AI">
+	<meta name="author" content="Build with AI">
 
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://use.fontawesome.com/4caf74be5b.js"></script>
-  
-  <script src="js-predict/mapdata-predict.js"></script>
-  <script src="js-predict/usmap-predict.js"></script>
+	<link rel="stylesheet" href="css/styles.css?v=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+		integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://use.fontawesome.com/4caf74be5b.js"></script>
 
-  <script src="js/mapdata.js"></script>
-  <script src="js/usmap.js"></script>
+	<!-- Plotly CDN -->
+	<script defer src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+	<script defer src="js/drawCharts.js"></script>
 
-  
+	<!-- Charjs CDN -->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
+		integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg=="
+		crossorigin="anonymous"></script>
+	<script defer src="js/graphs.js"></script> -->
+
+	<script src="js-predict/mapdata-predict.js"></script>
+	<script src="js-predict/usmap-predict.js"></script>
+
+	<script src="js/mapdata.js"></script>
+	<script src="js/usmap.js"></script>
 </head>
 
 <body>
-<nav class="navbar navbar-dark navbar-expand-lg navbar-light bg-light grad">
-  <a class="navbar-brand" href="index.html"><b>T-CUBE</b></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav ml-auto">
-	<li class="nav-item">
-		<a class="nav-link" href="index.html">Dashboard</a>
-		</li>
-      <li class="nav-item">
-        <a class="nav-link" href="about.html">About the Model</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="data.html">See the Data</a>
-      </li>
-	  <li class="nav-item">
-        <a class="nav-link" href="team.html">Meet the Team</a>
-      </li>
-	  <li class="nav-item">
-        <a class="nav-link" href="contact.html">Contact Us</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-
-<div class="container-fluid">
-<h2 class="sub-header">Forecasting the Future of COVID-19</h2>
-
-<div>
-<div class="alert alert-warning alert-dismissible" role="alert" style="opacity:0";>
-  <span type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></span>
-  <strong>Warning!</strong> We don't have enough data for this region.
-</div>
-</div>
-
-<div>
-<div class="row">
-	<div class="col-sm custom-title">
-	The Last 7 Days
-	</div>
-	<div class="col-sm custom-title">
-	<i class="fa fa-bars float-left align-middle" aria-hidden="true" style="margin-top:8px;"></i>
-	United States of America
-	<i class="fa fa-search float-right align-middle" aria-hidden="true" style="margin-top:8px;"></i>
-	</div>
-	<div class="col-sm custom-title">
-	The Next 3 Weeks
-	</div>
-</div> 
-  <div class="row">
-
-    <div class="col-sm">
-	<table class="table table_l_s_d">
-		<thead>
-		<tr>
-		  <th scope="col" data-field="date">Date</th>
-		  <th scope="col" data-field="confirmed">Confirmed</th>
-		  <th scope="col" data-field="active">Active</th>
-		  <th scope="col" data-field="deaths">Deaths</th>
-		</tr>
-	  </thead>
-	  <tbody class="historic_left">
-	  </tbody>
-	</table>
-	</div>
-	
-	<div class="col-sm">
-		<table class="table table_t_n_t_w">
-			<thead>
-				<tr>
-				  <th scope="col">Map of the United States of America</th>
-				</tr>
-			  </thead>
-			  <tbody class="historic_center">
-			  </tbody>
-		</table>
-		<div id="map">
+	<nav class="navbar navbar-dark navbar-expand-lg navbar-light bg-light grad">
+		<a class="navbar-brand" href="index.html"><b>T-CUBE</b></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+			aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="index.html">Dashboard</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="about.html">About the Model</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="data.html">See the Data</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="team.html">Meet the Team</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="contact.html">Contact Us</a>
+				</li>
+			</ul>
 		</div>
-		<br></br>
-	</div>
-		
-	<div class="col-sm">
-	<table class="table table_t_n_t_w">
-	  <thead>
-		<tr>
-		  <th scope="col" data-field="date">Week #</th>
-		  <th scope="col" data-field="confirmed">Confirmed</th>
-		  <th scope="col" data-field="deaths">Deaths</th>
-		</tr>
-	  </thead>
-	  <tbody class="historic_right">
-	  </tbody>
-	</table
-	</div>
-	<div class="col-sm blue-box">		
-		<a href="data.html">See the Full Data Set</a>
-		</div>
-  </div>
-</div>
-</div>
+	</nav>
 
+	<div class="container-fluid">
+		<h2 class="sub-header">Forecasting the Future of COVID-19</h2>
 
-
-
-
-
-<!-- Bottom graphs/data viz-->
-<div>
-	<div class="row">
-		<div class="col-sm custom-title">
-		Forecasting the Cases of COVID-19
-		</div>
-		<div class="col-sm custom-title">
-		Forecasting the Deaths of COVID-19
-		</div>
-	</div> 
-	
-	  <div class="row">
-	
-		<div class="col-sm">
-			<table class="table table_t_n_t_w">
-				<thead>
-					<tr>
-					  <th scope="col">COVID-19 Cases vs. 3 Week Forecast</th>
-					</tr>
-				  </thead>
-				  <tbody>
-				  </tbody>
-			</table>
-			<br></br>
+		<div>
+			<div class="alert alert-warning alert-dismissible" role="alert" style="opacity:0" ;>
+				<span type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+						aria-hidden="true">&times;</span></span>
+				<strong>Warning!</strong> We don't have enough data for this region.
+			</div>
 		</div>
 
-		<div class="col-sm">
-			<table class="table table_t_n_t_w">
-				<thead>
-					<tr>
-					  <th scope="col">COVID-19 Deaths vs. 3 Week Forecast</th>
-					</tr>
-				  </thead>
-				  <tbody>
-				  </tbody>
-			</table>
-			<br></br>
+		<div>
+			<div class="row">
+				<div class="col-sm custom-title">
+					The Last 7 Days
+				</div>
+				<div class="col-sm custom-title">
+					<i class="fa fa-bars float-left align-middle" aria-hidden="true" style="margin-top:8px;"></i>
+					United States of America
+					<i class="fa fa-search float-right align-middle" aria-hidden="true" style="margin-top:8px;"></i>
+				</div>
+				<div class="col-sm custom-title">
+					The Next 3 Weeks
+				</div>
+			</div>
+			<div class="row">
+
+				<div class="col-sm">
+					<table class="table table_l_s_d">
+						<thead>
+							<tr>
+								<th scope="col" data-field="date">Date</th>
+								<th scope="col" data-field="confirmed">Confirmed</th>
+								<th scope="col" data-field="active">Active</th>
+								<th scope="col" data-field="deaths">Deaths</th>
+							</tr>
+						</thead>
+						<tbody class="historic_left">
+						</tbody>
+					</table>
+				</div>
+
+				<div class="col-sm">
+					<table class="table table_t_n_t_w">
+						<thead>
+							<tr>
+								<th scope="col">Map of the United States of America</th>
+							</tr>
+						</thead>
+						<tbody class="historic_center">
+						</tbody>
+					</table>
+					<div id="map">
+					</div>
+					<br></br>
+				</div>
+
+				<div class="col-sm">
+					<table class="table table_t_n_t_w">
+						<thead>
+							<tr>
+								<th scope="col" data-field="date">Week #</th>
+								<th scope="col" data-field="confirmed">Confirmed</th>
+								<th scope="col" data-field="deaths">Deaths</th>
+							</tr>
+						</thead>
+						<tbody class="historic_right">
+						</tbody>
+					</table </div>
+					<div class="col-sm blue-box">
+						<a href="data.html">See the Full Data Set</a>
+					</div>
+				</div>
+			</div>
 		</div>
-		
+
+
+
+
+
+
+		<!-- Bottom graphs/data viz-->
+		<div>
+			<div class="row">
+				<div class="col-sm custom-title">
+					Forecasting the Cases of COVID-19
+				</div>
+				<div class="col-sm custom-title">
+					Forecasting the Deaths of COVID-19
+				</div>
+			</div>
+
+			<div class="row">
+
+				<div class="col-sm">
+					<table class="table table_t_n_t_w">
+						<thead>
+							<tr>
+								<th scope="col">COVID-19 Cases vs. 3 Week Forecast</th>
+							</tr>
+						</thead>
+						<tbody>
+						</tbody>
+					</table>
+					<canvas id="active-forecast"></canvas>
+					<br></br>
+				</div>
+
+				<div class="col-sm">
+					<table class="table table_t_n_t_w">
+						<thead>
+							<tr>
+								<th scope="col">COVID-19 Deaths vs. 3 Week Forecast</th>
+							</tr>
+						</thead>
+						<tbody>
+						</tbody>
+					</table>
+					<canvas id="death-forecast"></canvas>
+					<br></br>
+				</div>
+
+			</div>
 		</div>
-	  </div>
 	</div>
 	</div>
 
-<!-- Footer -->
-<footer class="page-footer pt-4">
-  <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">Last Updated:
-    <a class="update_date"></a>
-  </div>
-  <!-- Copyright -->
+	<!-- Footer -->
+	<footer class="page-footer pt-4">
+		<!-- Copyright -->
+		<div class="footer-copyright text-center py-3">Last Updated:
+			<a class="update_date"></a>
+		</div>
+		<!-- Copyright -->
 
-</footer>
-<!-- Footer -->
+	</footer>
+	<!-- Footer -->
 
-  <script src="js/scripts.js"></script>
+	<script src="js/scripts.js"></script>
 </body>
+
 </html>
