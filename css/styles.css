@@ -67,6 +67,13 @@ footer{
 	border-radius: 15px 15px 15px 15px;
 	box-shadow: 5px 5px 5px #cccccc;
 }
+.pointer{
+	cursor: pointer;
+}
+
+.modal-lg {
+	max-width: 90% !important;
+}
 
 tspan{
 	display:none !important;
