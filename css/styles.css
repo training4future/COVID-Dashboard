@@ -16,6 +16,22 @@ footer{
 	font-size: 1.5rem !important;
 	color:#ffffff !important;
 }
+
+.navbar-brand b {
+	position: relative;
+}
+
+.navbar-brand b::before{
+	position: absolute;
+	content: 'Track The Trajectory';
+	font-size: 14px;
+	left: 100%;
+	top: 50%;
+	transform: translateY(-50%);
+	font-weight: normal;
+	margin-left: 5px;
+}
+
 .navbar-nav > li >a{
 	position: relative;
 	font-size:0.9rem !important;
@@ -106,3 +122,7 @@ tspan{
 }
 
 .close{background-color: transparent;}
+
+.custom-box{
+	line-height:30px;
+}
