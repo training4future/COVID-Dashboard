@@ -1,0 +1,93 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Build with AI</title>
+  <meta name="description" content="Build with AI">
+  <meta name="author" content="Build with AI">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://use.fontawesome.com/4caf74be5b.js"></script>
+  <script src="js/mapdata.js"></script>
+  <script src="js/usmap.js"></script>
+
+  <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+</head>
+
+<body>
+<nav class="navbar navbar-dark navbar-expand-lg navbar-light bg-light grad">
+  <a class="navbar-brand" href="index.html"><b>T-CUBE</b></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+		<li class="nav-item">
+		<a class="nav-link" href="index.html">Dashboard</a>
+		</li>
+		<li class="nav-item">
+        <a class="nav-link" href="about.html">About the Model</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="data.html">See the Data</a>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="team.html">Meet the Team</a>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="#">Contact Us</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container-fluid">
+	<h2 class="sub-header">Learn About Our Model, <b>T-CUBE,</b> Forecasting the Future of COVID-19</h2>
+	<div class="row" align="center">
+		<div class="col-sm">
+			<span class="iconify" data-icon="openmoji:light-bulb" data-inline="false" height="100"></span>
+		</div>
+		<div class="col-sm">
+			<span class="iconify" data-icon="openmoji:puzzle-piece" data-inline="false" height="100"></span>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-sm about-title">
+		How T-CUBE Can Help In A Pandemic
+		</div>
+		<div class="col-sm about-title">
+		Assumptions for Our Data Model
+		</div>
+	</div> 
+</div>
+<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm custom-box">
+				The spread of COVID-19 has lead to numerous unforseen consequences, specifically global shutdowns, deaths, and worldwide shortages of medical supplies. A mathematical model could be used to capture the dynamics of COVID-19's spread to estimate the infections, recoveries, and deaths that may result from the disease. An estimation is crucial to make policy decisions and for the alerts for the medical emergencies that may arise. Many epidemiological models are being used to make such an estimation. One major factor that is important in the predictions using the models is the dynamic nature of the disease spread. Unless we can come up with a way of estimating the parameters that guide this dynamic spread, the models may not give accurate predictions. Our time-dependent SEIRD model forecasts COVID-19 cases 3 weeks into the future for almost all US states. The model is evaluated using the data taken from open-sourced data sets.
+			</div>
+			<div class="col-sm custom-box">
+				1. The affect due to environmental factors is considered to be negligible.
+				<br><br>
+				2. The percentage of the population recovered, being infected again is considered negligible.
+				<br><br>
+				3. The growth of testing capabilities is same as that of the previous week.
+				<br><br>
+				4. The current interventions will not change for the forecasting period.
+				<br><br>
+				5. The Susceptible to Total Population ratio (S/N) is always considered to be less than one, even when there is a change in populataion due to vital dynamics or migration of people.
+			</div>
+		</div> 
+	</div>
+
+<!-- Footer -->
+<footer class="page-footer pt-4">
+
+</footer>
+<!-- Footer -->
+
+  <script src="js/scripts.js"></script>
+</body>
+</html>
