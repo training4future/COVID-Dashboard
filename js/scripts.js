@@ -5,6 +5,11 @@ $(document).ready(function () {
 	var past_7_days = [];
 	var next_3_weeks = [];
 	get_states();
+
+	simplemaps_usmap.hooks.out_state = (id) => {
+		resetOpacity(id)
+	}
+
 	simplemaps_usmap.hooks.over_state = function (id) {
 		current_state['id'] = id;
 		current_state['name'] = simplemaps_usmap_mapinfo.names[id];
