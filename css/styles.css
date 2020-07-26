@@ -126,3 +126,26 @@ tspan{
 .custom-box{
 	line-height:30px;
 }
+
+.modal-body{
+	position: relative;
+}
+.modal-body::before{
+	position: absolute;
+	content: '* These are cumulative values';
+	bottom: 0px;
+	right: 15px;
+	color: rgb(83, 83, 0);
+}
+
+.images-grid{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	margin: 30px 0 0 10px;
+	grid-row-gap: 30px;
+}
+
+.images-grid img{
+	width: 600px;
+	height: 330px;
+}
