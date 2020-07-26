@@ -43,6 +43,8 @@ const plotPast = (pastData) => {
         showlegend: true
     }
 
+    fillHole(deathsDataset, confirmedDataset, true)
+
     deathForecastData.push(deathsDataset)
     confirmedForecastData.push(confirmedDataset)
 
@@ -96,6 +98,7 @@ const plotNext = (nextData) => {
         name: "Predicted Confirmed Cases",
         showlegend: true
     }
+    fillHole(deathsDataset, confirmedDataset, false)
 
     deathForecastData.push(deathsDataset)
     confirmedForecastData.push(confirmedDataset)
@@ -111,4 +114,24 @@ const clearPlots = () => {
 
     Plotly.newPlot('death-forecast', []);
     Plotly.newPlot('active-forecast', []);
+}
+
+const fillHole = (deathsDataset, confirmedDataset, pastOrNext) => {
+    // pastOrNext = true it it is past data else false
+    if (pastOrNext == true && deathForecastData.length != 0) {
+        console.log("Past Now. Next first")
+        deathsDataset.x.push(deathForecastData[0].x[0])
+        deathsDataset.y.push(deathForecastData[0].y[0])
+
+
+        confirmedDataset.x.push(confirmedForecastData[0].x[0])
+        confirmedDataset.y.push(confirmedForecastData[0].y[0])
+    } else if (pastOrNext == false && deathForecastData.length != 0) {
+        console.log("Next now. Past first")
+        deathForecastData[0].x.push(deathsDataset.x[0])
+        deathForecastData[0].y.push(deathsDataset.y[0])
+
+        confirmedForecastData[0].x.push(confirmedDataset.x[0])
+        confirmedForecastData[0].y.push(confirmedDataset.y[0])
+    }
 }
