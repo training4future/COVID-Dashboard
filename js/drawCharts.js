@@ -16,6 +16,15 @@ const plotPast = (pastData) => {
         y: pastDeaths,
         type: 'Scatter',
         mode: 'lines+markers',
+        marker: {
+            color: 'blue',
+            // line: {
+            //     color: 'rgb(231, 99, 250)',
+            //     width: 2
+            // }
+        },
+        name: "Past Deaths",
+        showlegend: true
     }
 
     confirmedDataset = {
@@ -23,6 +32,15 @@ const plotPast = (pastData) => {
         y: pastConfirmed,
         type: 'Scatter',
         mode: 'lines+markers',
+        marker: {
+            color: 'blue',
+            // line: {
+            //     color: 'rgb(231, 99, 250)',
+            //     width: 2
+            // }
+        },
+        name: "Past Confirmed Cases",
+        showlegend: true
     }
 
     deathForecastData.push(deathsDataset)
@@ -59,6 +77,7 @@ const plotNext = (nextData) => {
             //     width: 2
             // }
         },
+        name: "Predicted Deaths",
         showlegend: true
     }
 
@@ -74,6 +93,7 @@ const plotNext = (nextData) => {
             //     width: 2
             // }
         },
+        name: "Predicted Confirmed Cases",
         showlegend: true
     }
 
