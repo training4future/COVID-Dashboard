@@ -16,9 +16,31 @@ footer{
 	color:#ffffff !important;
 }
 .navbar-nav > li >a{
-	font-size:1.25rem !important;
-	color:#ffffff !important
+	position: relative;
+	font-size:0.9rem !important;
+	color:#ffffff !important;
+	font-family: 'Consolas';
+	letter-spacing: 0.5px;
+	/* text-transform: uppercase; */
+	margin: 1px;
 }
+
+.navbar-nav > li >a::before{
+	position: absolute;
+	content: '';
+	width: 88%;
+	height: 2px;
+	background-color: white;
+	bottom: 5px;
+	transform: scaleX(0);
+	opacity: 0.8;
+	transition: transform 300ms ease-out;
+}
+
+.navbar-nav > li >a:hover::before {
+	transform: scaleX(1);
+}
+
 .grad{
   background-image: linear-gradient(to right, #00c6ff , #0072ff);
 }
