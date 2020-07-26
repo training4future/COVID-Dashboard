@@ -12,9 +12,12 @@
   <script src="https://use.fontawesome.com/4caf74be5b.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+ <link rel="stylesheet" href="libs/chosen/chosen.css">
+<script type='text/javascript' src='libs/chosen/chosen.jquery.min.js'></script>
 
-  <script src="js-predict/mapdata-predict.js"></script>
-  <script src="js-predict/usmap-predict.js"></script>
+
+  <!--<script src="js-predict/mapdata-predict.js"></script>
+  <script src="js-predict/usmap-predict.js"></script>-->
 
   <script src="js/mapdata.js"></script>
   <script src="js/usmap.js"></script>
@@ -66,8 +69,11 @@
 	</div>
 	<div class="col-sm custom-title">
 	<i class="fa fa-bars float-left align-middle" aria-hidden="true" style="margin-top:8px;"></i>
-	United States of America
-	<i class="fa fa-search float-right align-middle" aria-hidden="true" style="margin-top:8px;"></i>
+	<!--<input class="search" type="text" placeholder="United States of America" name="search" onkeyup="search()">-->
+	<select data-placeholder="Choose a State..." id="state_list" style="width:60%;" tabindex="1">
+	<option value=""></option>
+	</select>		
+	<!--<i class="fa fa-search float-right align-middle search-icon pointer" aria-hidden="true" style="margin-top:8px;"></i>-->
 	</div>
 	<div class="col-sm custom-title">
 	The Next 3 Weeks
