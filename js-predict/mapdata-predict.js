@@ -9,8 +9,8 @@ var simplemaps_usmap_mapdata={
 		//State defaults
 		//state_description: "State description",
 		state_description: "",
-    state_color: "#0072ff", 
-    state_hover_color: "#00c6ff",
+    state_color: "#FF0000", 
+    state_hover_color: "#AA0000",
     state_url: "",
     border_size: 1.5,
     border_color: "#ffffff",
@@ -63,7 +63,7 @@ var simplemaps_usmap_mapdata={
     popup_nocss: "no",
     
 		//Advanced settings
-		div: "map",
+		div: "map-predict",
     auto_load: "yes",
     rotate: "0",
     url_new_tab: "yes",
