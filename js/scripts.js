@@ -4,8 +4,8 @@ $(document).ready(function () {
 	var next_3_weeks = [];
 	get_states();
 	simplemaps_usmap.hooks.over_state = function (id) {
-		update_info(id, simplemaps_usmap_mapinfo.names[id]);
 		clearPlots()
+		update_info(id, simplemaps_usmap_mapinfo.names[id]);
 	}
 
 	$('.close').on('click', function () {

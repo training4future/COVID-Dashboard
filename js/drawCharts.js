@@ -75,8 +75,8 @@ const plotNext = (nextData) => {
 
     console.log({ confirmedDataset, deathsDataset })
 
-    Plotly.redraw('death-forecast');
-    Plotly.redraw('active-forecast');
+    Plotly.redraw('death-forecast', [deathsDataset]);
+    Plotly.redraw('active-forecast', [confirmedDataset]);
 }
 
 const clearPlots = () => {
