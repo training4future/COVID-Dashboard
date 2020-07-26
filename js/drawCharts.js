@@ -46,7 +46,7 @@ const plotPast = (pastData) => {
     deathForecastData.push(deathsDataset)
     confirmedForecastData.push(confirmedDataset)
 
-    console.log("Past:", { confirmedForecastData, deathForecastData })
+    // console.log("Past:", { confirmedForecastData, deathForecastData })
     Plotly.newPlot('death-forecast', deathForecastData);
     Plotly.newPlot('active-forecast', confirmedForecastData);
 }
@@ -100,7 +100,7 @@ const plotNext = (nextData) => {
     deathForecastData.push(deathsDataset)
     confirmedForecastData.push(confirmedDataset)
 
-    console.log("Next: ", { confirmedForecastData, deathForecastData })
+    // console.log("Next: ", { confirmedForecastData, deathForecastData })
     Plotly.newPlot('death-forecast', deathForecastData);
     Plotly.newPlot('active-forecast', confirmedForecastData);
 }
