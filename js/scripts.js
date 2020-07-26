@@ -4,11 +4,35 @@ $(document).ready(function () {
 	var past_7_days = [];
 	var next_3_weeks = [];
 	get_states();
-	simplemaps_usmap.hooks.over_state = function (id) {
+	simplemaps_usmap.hooks.over_state=function(id){
 		clearPlots()
-		current_state['id'] = id;
-		current_state['name'] = simplemaps_usmap_mapinfo.names[id];
-		update_info(current_state['id'], current_state['name']);
+		current_state['id']=id;
+		current_state['name']=simplemaps_usmap_mapinfo.names[id];
+		update_info(current_state['id'],current_state['name']);
+		$("#state_list").val(''); //When you zoom out, reset the select
+		$("#state_list").trigger("chosen:updated"); //update chosen
+	}
+
+	//filter&search
+	var state_list=$("#state_list")
+	for (var state in simplemaps_usmap_mapdata.state_specific){
+		var key=state;
+		var value=simplemaps_usmap_mapdata.state_specific[state].name;
+		 state_list.append($("<option></option>").attr("value",key).text(value)); 
+	}						
+	state_list.chosen();
+	state_list.change(function(){
+		var id=$(this).val();
+		console.log(id);
+		simplemaps_usmap.state_zoom(id);
+		current_state['id']=id;
+		current_state['name']=simplemaps_usmap_mapinfo.names[id];
+		update_info(current_state['id'],current_state['name']);
+	});			
+	
+	simplemaps_usmap.hooks.back=function(){
+		$("#state_list").val(''); //When you zoom out, reset the select
+		$("#state_list").trigger("chosen:updated"); //update chosen
 	}
 
 	$('.close').on('click', function () {
@@ -101,4 +125,8 @@ function update_date() {
 	var curr_year = d.getFullYear();
 	$('.update_date').html(d);
 	$('.update_date_full_dataset').html(d);
+}
+
+function search(){
+
 }
