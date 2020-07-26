@@ -5,6 +5,7 @@ $(document).ready(function () {
 	var next_3_weeks = [];
 	get_states();
 	simplemaps_usmap.hooks.over_state = function (id) {
+		clearPlots()
 		current_state['id'] = id;
 		current_state['name'] = simplemaps_usmap_mapinfo.names[id];
 		update_info(current_state['id'], current_state['name']);
@@ -32,6 +33,7 @@ function update_info(id, state) {
 	})
 		.done(function (response) {
 			past_7_days = response;
+			plotPast(past_7_days)
 			var left_table = "";
 			$.each(past_7_days, function (index, value) {
 				left_table = left_table + "<tr><td>" + value['date'] + "</td><td>" + value['confirmed'] + "</td><td>" + value['deaths'] + "</td></tr>";
@@ -64,6 +66,7 @@ function update_info(id, state) {
 
 				$('.alert').css('opacity', '0');
 				$('.historic_right').html(right_table);
+				plotNext(next_3_weeks)
 				//simplemaps_usmap_mapdata.state_specific[id].description=next_3_weeks[0];
 			}
 			else {
