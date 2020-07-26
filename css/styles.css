@@ -4,7 +4,8 @@ footer{ height:50px; margin-bottom: 50px;}
 /* Trick */
 body{ 
   display:flex; 
-  flex-direction:column; 
+  flex-direction:column;
+  overflow-x: hidden;
 }
 
 footer{

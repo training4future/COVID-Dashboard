@@ -119,7 +119,7 @@ const clearPlots = () => {
 const fillHole = (deathsDataset, confirmedDataset, pastOrNext) => {
     // pastOrNext = true it it is past data else false
     if (pastOrNext == true && deathForecastData.length != 0) {
-        console.log("Past Now. Next first")
+        // console.log("Past Now. Next first")
         deathsDataset.x.push(deathForecastData[0].x[0])
         deathsDataset.y.push(deathForecastData[0].y[0])
 
@@ -127,7 +127,7 @@ const fillHole = (deathsDataset, confirmedDataset, pastOrNext) => {
         confirmedDataset.x.push(confirmedForecastData[0].x[0])
         confirmedDataset.y.push(confirmedForecastData[0].y[0])
     } else if (pastOrNext == false && deathForecastData.length != 0) {
-        console.log("Next now. Past first")
+        // console.log("Next now. Past first")
         deathForecastData[0].x.push(deathsDataset.x[0])
         deathForecastData[0].y.push(deathsDataset.y[0])
 
