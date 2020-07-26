@@ -1,15 +1,5 @@
-var deathForecastData = [{
-    x: [],
-    y: [],
-    type: 'Scatter',
-    mode: 'lines+markers',
-}]
-var confirmedForecastData = [{
-    x: [],
-    y: [],
-    type: 'Scatter',
-    mode: 'lines+markers',
-}]
+var deathForecastData = []
+var confirmedForecastData = []
 
 const plotPast = (pastData) => {
     let pastConfirmed = []
@@ -21,11 +11,40 @@ const plotPast = (pastData) => {
         pastDates.push(dayobj.date)
     })
 
-    deathForecastData[0].x = deathForecastData[0].x.concat(pastDates)
-    deathForecastData[0].y = deathForecastData[0].x.concat(pastDeaths)
+    deathsDataset = {
+        x: pastDates,
+        y: pastDeaths,
+        type: 'Scatter',
+        mode: 'lines+markers',
+        marker: {
+            color: 'blue',
+            // line: {
+            //     color: 'rgb(231, 99, 250)',
+            //     width: 2
+            // }
+        },
+        name: "Past Deaths",
+        showlegend: true
+    }
 
-    confirmedForecastData[0].x = confirmedForecastData[0].x.concat(pastDates)
-    confirmedForecastData[0].y = confirmedForecastData[0].y.concat(pastConfirmed)
+    confirmedDataset = {
+        x: pastDates,
+        y: pastConfirmed,
+        type: 'Scatter',
+        mode: 'lines+markers',
+        marker: {
+            color: 'blue',
+            // line: {
+            //     color: 'rgb(231, 99, 250)',
+            //     width: 2
+            // }
+        },
+        name: "Past Confirmed Cases",
+        showlegend: true
+    }
+
+    deathForecastData.push(deathsDataset)
+    confirmedForecastData.push(confirmedDataset)
 
     console.log("Past:", { confirmedForecastData, deathForecastData })
     Plotly.newPlot('death-forecast', deathForecastData);
@@ -45,11 +64,41 @@ const plotNext = (nextData) => {
             nextConfirmed.push(dayObj.confirmed)
         })
     })
-    deathForecastData[0].x = deathForecastData[0].x.concat(nextDates)
-    deathForecastData[0].y = deathForecastData[0].x.concat(nextDeaths)
 
-    confirmedForecastData[0].x = confirmedForecastData[0].x.concat(nextDates)
-    confirmedForecastData[0].y = confirmedForecastData[0].y.concat(nextConfirmed)
+    deathsDataset = {
+        x: nextDates,
+        y: nextDeaths,
+        type: 'Scatter',
+        mode: 'lines+markers',
+        marker: {
+            color: 'orange',
+            // line: {
+            //     color: 'rgb(231, 99, 250)',
+            //     width: 2
+            // }
+        },
+        name: "Predicted Deaths",
+        showlegend: true
+    }
+
+    confirmedDataset = {
+        x: nextDates,
+        y: nextConfirmed,
+        type: 'Scatter',
+        mode: 'lines+markers',
+        marker: {
+            color: 'orange',
+            // line: {
+            //     color: 'rgb(231, 99, 250)',
+            //     width: 2
+            // }
+        },
+        name: "Predicted Confirmed Cases",
+        showlegend: true
+    }
+
+    deathForecastData.push(deathsDataset)
+    confirmedForecastData.push(confirmedDataset)
 
     console.log("Next: ", { confirmedForecastData, deathForecastData })
     Plotly.newPlot('death-forecast', deathForecastData);
@@ -57,18 +106,8 @@ const plotNext = (nextData) => {
 }
 
 const clearPlots = () => {
-    deathForecastData = [{
-        x: [],
-        y: [],
-        type: 'Scatter',
-        mode: 'lines+markers',
-    }]
-    confirmedForecastData = [{
-        x: [],
-        y: [],
-        type: 'Scatter',
-        mode: 'lines+markers',
-    }]
+    deathForecastData = []
+    confirmedForecastData = []
 
     Plotly.newPlot('death-forecast', []);
     Plotly.newPlot('active-forecast', []);
