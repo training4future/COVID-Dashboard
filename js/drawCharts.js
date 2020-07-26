@@ -23,7 +23,7 @@ const plotPast = (pastData) => {
             //     width: 2
             // }
         },
-        name: "Past Deaths",
+        name: "Past Deceased",
         showlegend: true
     }
 
@@ -79,7 +79,7 @@ const plotNext = (nextData) => {
             //     width: 2
             // }
         },
-        name: "Predicted Deaths",
+        name: "Predicted Deceased",
         showlegend: true
     }
 
