@@ -14,3 +14,6 @@ One weekend: Friday, July 24 - Monday, July 27
 ## Technologies:
 - Microsoft Azure
 - Visual Studio Code
+=======
+
+Dashboard development for Build for AI 2020 hackathon. 
