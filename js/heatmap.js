@@ -1,5 +1,7 @@
 const HEAT_FACTORS_ENDPOINT = 'http://152.67.162.241:3000/countries/US/heatfactors'
 var normalizedHeatFactors = undefined
+const mapLoadingScreen = document.querySelector('.map-loading-screen')
+var firstTime = true
 
 const normalize = (obj, min, max) => {
     let normalized = {}
@@ -29,6 +31,11 @@ const resetOpacity = (key) => {
 const setStateOpacities = () => {
     for (let key in simplemaps_usmap_mapdata.state_specific) {
         resetOpacity(key)
+    }
+    console.log("Done with resetting all states")
+    if (firstTime) {
+        mapLoadingScreen.style.display = "none"
+        firstTime = false
     }
 }
 
