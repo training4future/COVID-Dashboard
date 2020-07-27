@@ -9,6 +9,9 @@ $(document).ready(function () {
 	simplemaps_usmap.hooks.out_state = (id) => {
 		resetOpacity(id)
 	}
+	simplemaps_usmap.hooks.zooming_complete = () => {
+		setStateOpacities()
+	}
 
 	simplemaps_usmap.hooks.over_state = function (id) {
 		current_state['id'] = id;
@@ -55,6 +58,7 @@ $(document).ready(function () {
 	simplemaps_usmap.hooks.back = function () {
 		$("#state_list").val(''); //When you zoom out, reset the select
 		$("#state_list").trigger("chosen:updated"); //update chosen
+		setStateOpacities()
 	}
 
 	$('.close').on('click', function () {
