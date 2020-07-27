@@ -150,6 +150,10 @@ tspan{
 	height: 330px;
 }
 
+.full-dataset-btn{
+	font-size: 1em;
+}
+
 .map-loading-screen{
 	position: absolute;
 	width: 100%;
@@ -167,6 +171,39 @@ tspan{
 	left: 50%;
 	transform: translate(-50%, -50%);
 	animation: spin-loader 1.5s ease-in-out infinite;
+}
+
+.heatscale{
+	position: absolute;
+	width: 60%;
+	height: 15px;
+	background: linear-gradient(to right, #0073ff10, #0073ffff);
+	border: 1px solid #0073fff1;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: -1;
+}
+
+.heatscale::before{
+	position: absolute;
+	content: "0";
+	left: 0%;
+	bottom: 100%;
+}
+
+.heatscale::after{
+	position: absolute;
+	content: "1";
+	right: 0%;
+	bottom: 100%;
+}
+
+.heatscale-desc{
+	position: absolute;
+	bottom: 30px;
+	font-size: 12px;
+	color: rgb(168, 128, 35);
 }
 
 @keyframes spin-loader {
