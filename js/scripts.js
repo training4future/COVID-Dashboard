@@ -85,6 +85,7 @@ $(document).ready(function () {
 		$('.alert').css('opacity', '0');
 	});
 	$('.full-dataset-trigger').on('click', function () {
+		clearPlots()
 		if (typeof (current_state['id']) != 'undefined') {
 			update_info(current_state['id'], current_state['name']);
 		}
