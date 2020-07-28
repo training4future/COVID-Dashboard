@@ -1,5 +1,7 @@
 var FETCHING_STATUS = false;
 $(document).ready(function () {
+
+
 	var current_state = [];
 	var states = [];
 	var past_7_days = [];
@@ -7,6 +9,9 @@ $(document).ready(function () {
 	get_states();
 
 	simplemaps_usmap.hooks.complete = () => {
+		// Plot whole US Data
+		update_info(null, "");
+
 		simplemaps_usmap.hooks.out_state = (id) => {
 			resetOpacity(id)
 		}
@@ -95,6 +100,7 @@ $(document).ready(function () {
 });
 
 function update_info(id, state) {
+	clearPlots()
 	$('.state').html(state);
 	//past 7 days
 	let pastDataPromise = $.ajax({
