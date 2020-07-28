@@ -13,6 +13,7 @@ $(document).ready(function () {
 		simplemaps_usmap.hooks.zooming_complete = () => {
 			setStateOpacities()
 		}
+		setStateOpacities()
 	}
 
 	simplemaps_usmap.hooks.over_state = function (id) {
