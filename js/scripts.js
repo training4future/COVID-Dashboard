@@ -13,9 +13,27 @@ $(document).ready(function () {
 		simplemaps_usmap.hooks.zooming_complete = () => {
 			setStateOpacities()
 		}
+		setStateOpacities()
 	}
 
 	simplemaps_usmap.hooks.over_state = function (id) {
+		current_state['id'] = id;
+		current_state['name'] = simplemaps_usmap_mapinfo.names[id];
+
+		// Fetch only if another state's data is not being fetched
+		if (FETCHING_STATUS) {
+			return false
+		} else {
+			FETCHING_STATUS = true
+			clearPlots()
+			update_info(current_state['id'], current_state['name']);
+		}
+
+		$("#state_list").val(''); //When you zoom out, reset the select
+		$("#state_list").trigger("chosen:updated"); //update chosen
+	}
+
+	simplemaps_usmap.hooks.click_state = function (id) {
 		current_state['id'] = id;
 		current_state['name'] = simplemaps_usmap_mapinfo.names[id];
 
