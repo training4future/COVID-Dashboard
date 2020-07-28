@@ -175,7 +175,7 @@ tspan{
 
 .heatscale{
 	position: absolute;
-	width: 60%;
+	width: 40%;
 	height: 15px;
 	background: linear-gradient(to right, #0073ff10, #0073ffff);
 	border: 1px solid #0073fff1;
