@@ -6,11 +6,13 @@ $(document).ready(function () {
 	var next_3_weeks = [];
 	get_states();
 
-	simplemaps_usmap.hooks.out_state = (id) => {
-		resetOpacity(id)
-	}
-	simplemaps_usmap.hooks.zooming_complete = () => {
-		setStateOpacities()
+	simplemaps_usmap.hooks.complete = () => {
+		simplemaps_usmap.hooks.out_state = (id) => {
+			resetOpacity(id)
+		}
+		simplemaps_usmap.hooks.zooming_complete = () => {
+			setStateOpacities()
+		}
 	}
 
 	simplemaps_usmap.hooks.over_state = function (id) {
